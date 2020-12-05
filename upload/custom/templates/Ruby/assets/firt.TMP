@@ -1,0 +1,68 @@
+{
+    "GENERAL": {
+        "DESCRIPTION": "Copyright © {sitename}. All rights reserved.",
+        "FAVICON": "\/custom\/templates\/Ruby\/assets\/img\/logo.png",
+        "COLOR": "rgb(230, 41, 60)"
+    },
+    "WIDGETS": {
+        "LAYOUT": "outline",
+        "COLOR": "primary"
+    },
+    "COLORS": {
+        "GENERAL": {
+            "PRIMARY": "rgb(0, 123, 255)",
+            "LIGHT": "rgb(248, 249, 250)",
+            "DARK": "rgb(52, 58, 64)",
+            "SUCCESS": "rgb(40, 167, 69)",
+            "INFO": "rgb(23, 162, 184)",
+            "WARNING": "rgb(255, 193, 7)",
+            "DANGER": "rgb(220, 53, 69)"
+        },
+        "LIGHT": {
+            "BBODY": "rgb(236, 236, 236)",
+            "BCARD": "rgb(255, 255, 255)",
+            "BCALLOUT": "rgb(255, 255, 255)",
+            "BNAVBAR": "rgb(45, 45, 45)",
+            "BSIDEBAR": "rgb(31, 31, 31)",
+            "BDROPDOWN": "rgb(255, 255, 255)",
+            "BDROPDOWNH": null,
+            "BFOOTER": "rgb(208, 208, 208)",
+            "BINPUTS": "rgb(236, 236, 236)",
+            "CBODY": "rgb(119, 119, 119)",
+            "CCARD": "rgb(58, 58, 58)",
+            "CCALLOUT": "rgb(60, 60, 60)",
+            "CNAVBAR": "rgb(177, 177, 177)",
+            "CSIDEBAR": "rgb(74, 74, 74)",
+            "CSIDEBARH": "rgb(183, 183, 183)",
+            "CDROPDOWN": "rgb(64, 64, 64)",
+            "CDROPDOWNH": "rgb(255, 255, 255)",
+            "CFOOTER": "rgb(85, 85, 85)",
+            "CINPUTS": "rgb(97, 97, 97)",
+            "CLALERT": "rgb(255, 255, 255)",
+            "CDALERT": "rgb(255, 255, 255)"
+        },
+        "DARK": {
+            "BBODY": "rgb(0, 0, 0)",
+            "BCARD": "rgb(10, 10, 10)",
+            "BCALLOUT": "rgb(19, 19, 19)",
+            "BNAVBAR": "rgb(21, 21, 21)",
+            "BSIDEBAR": "rgb(21, 21, 21)",
+            "BDROPDOWN": "rgb(21, 21, 21)",
+            "BDROPDOWNH": null,
+            "BFOOTER": "rgb(17, 17, 17)",
+            "BINPUTS": "rgb(43, 43, 43)",
+            "CBODY": "rgb(105, 105, 105)",
+            "CCARD": "rgb(130, 130, 130)",
+            "CCALLOUT": "rgb(172, 172, 172)",
+            "CNAVBAR": "rgb(177, 177, 177)",
+            "CSIDEBAR": "rgb(74, 74, 74)",
+            "CSIDEBARH": "rgb(183, 183, 183)",
+            "CDROPDOWN": "rgb(187, 187, 187)",
+            "CDROPDOWNH": "rgb(255, 255, 255)",
+            "CFOOTER": "rgb(241, 241, 241)",
+            "CINPUTS": "rgb(167, 167, 167)",
+            "CLALERT": "rgb(255, 255, 255)",
+            "CDALERT": "rgb(146, 146, 146)"
+        }
+    }
+}
