@@ -1,7 +1,7 @@
 {
     "GENERAL": {
         "DESCRIPTION": "Copyright © {sitename}. All rights reserved.",
-        "FAVICON": "\/custom\/templates\/Ruby\/assets\/img\/logo.png",
+        "FAVICON": "https:\/\/cdn.discordapp.com\/icons\/733197277690331162\/908131bed4d048317d17a4bae94d61f3.png?size=4096",
         "COLOR": "rgb(230, 41, 60)"
     },
     "WIDGETS": {
