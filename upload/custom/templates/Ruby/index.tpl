@@ -14,7 +14,7 @@
               <!-- /.card-header -->
               <div class="card-body">
 				<p class="card-text">
-					{$item.content}
+					{$item.content|replace:"<img ":"<img class='w-100 h-auto'"}
 				</p>
 			  </div>
 			  <div class="card-footer">

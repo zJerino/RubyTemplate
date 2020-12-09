@@ -99,6 +99,16 @@
                     		</div>
                   		</div>
 					</div>
+					<div class="form-group mb-2">
+						<label for="DEFAULT_MODE">DEFAULT MODE <small>x</small></label>
+						<div class="input-group">
+							<select name="DEFAULT_MODE" id="DEFAULT_MODE" class="form-control">
+								<option value="light" {if ($VALUES.GENERAL.DEFAULTMODE == "light")}selected{/if}>Light</option>
+								<option value="dark"{if ($VALUES.GENERAL.DEFAULTMODE == "dark")}selected{/if}>DARK</option>
+							</select>
+                  		</div>
+					</div>
+
 					<input type="text" name="token" value="{$TOKEN}" hidden>
 					<input type="text" name="GENERAL_S" value="1" hidden>
 					<button type="submit" class="btn btn-primary btn-block">{$SUBMIT}</button>

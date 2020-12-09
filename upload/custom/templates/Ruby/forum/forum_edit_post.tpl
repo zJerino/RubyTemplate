@@ -38,9 +38,9 @@
 		  <span class="float-md-right"><i data-toggle="popover" data-placement="top" data-html="true" data-content="{$MARKDOWN_HELP}" class="fa fa-question-circle text-info" aria-hidden="true"></i></span>
 	    </div>
 		{else}
-		<div class="form-group">
-		  <textarea name="content" id="editor" rows="3">{$CONTENT}</textarea>
-		</div>
+			<div class="form-group">
+			  	<textarea name="content"d-none id="timenace" rows="3">{$CONTENT}</textarea>
+			</div>
 		{/if}
 		
 		<input type="hidden" name="token" value="{$TOKEN}">
@@ -51,5 +51,5 @@
   </div>
 </div>
 </div>
-
+{assign var="tinyMCESETT" value="true"}
 {include file='footer.tpl'}

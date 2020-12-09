@@ -42,8 +42,6 @@
                                     <li><a class="dropdown-item" href="" data-toggle="modal" data-target="#deleteModal">{$DELETE}</a></li>
                                     <li><a class="dropdown-item" href="{$MOVE_URL}">{$MOVE}</a></li>
                                     <li><a class="dropdown-item" href="{$STICK_URL}">{$STICK}</a></li>
-                                    <div class="dropdown-divider"></div>
-                                    <li><a class="dropdown-item text-center" href="./../" data-toggle="tooltip" title="Hi! i'am hidden">{literal}{"u"}{/literal}</a></li>
                                 </ul>
                             </div>
                         {/if}
@@ -101,7 +99,7 @@
                         </div>
                         <div id="seccion_content" class="d-flex flex-column" style="width: 100%;padding-left: 0.5rem;flex: 0 0 65%;">
                             <div class="content_firts">
-                                {$reply.content}
+                                {$reply.content|replace:"<img ":"<img class='w-100 h-auto'"}
                             </div>
                             <div class="content_second mt-auto">
                                 {if (!empty($reply.signature))}

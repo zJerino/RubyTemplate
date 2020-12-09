@@ -658,3 +658,15 @@ span.input-group-text[colorpixer] {
         opacity: .4;
     }
 }
+
+.btn-close {
+    border: none;
+    border-radius: .2rem;
+    padding: .4rem;
+    height: fit-content;
+    background-color: #71717159;
+}
+
+[d-none] {
+    display: none;
+}

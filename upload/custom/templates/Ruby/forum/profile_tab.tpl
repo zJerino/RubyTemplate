@@ -13,7 +13,7 @@
 				<h3 class="timeline-header"><a href="{$post.link}">{$post.title}</a></h3>
 
 				<div class="timeline-body">
-					{$post.content}
+					{$post.content|replace:"<img ":"<img class='w-100 h-auto'"}
 				</div>
 				<div class="timeline-footer">
 					{$USERNAME} &bull; {$post.date_full}

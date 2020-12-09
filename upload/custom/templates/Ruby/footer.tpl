@@ -100,6 +100,28 @@
 			})
 		</script>
 	{/if}
+	{if (isset($tinyMCESETT))}
+		<script>
+			window.addEventListener('turbolinks:load', ()=> {
+				//console.clear()
+				setTimeout(() => {
+					tinyMCE.init({
+						selector: '#timenace',
+						browser_spellcheck: true,
+						contextmenu: false,
+						branding: false,
+						menubar: false,
+						convert_urls: false,
+						plugins: 'autolink,codesample,directionality,emoticons,hr,image,link,lists,spoiler,preview',
+						toolbar: 'undo redo | bold italic underline strikethrough fontsizeselect forecolor backcolor ltr rtl | preview | alignleft aligncenter alignright alignjustify | codesample emoticons hr image link numlist bullist | spoiler-add spoiler-remove',
+						spoiler_caption: 'Spoiler',
+						default_link_target: '_blank',
+						skin: "oxide"
+					});
+				}, 2000);
+			})
+		</script>
+	{/if}
 	{if (isset($SELECT2_PLUGINADD))}
 		<link rel="stylesheet" href="{$TEMPLATE_PATH}/assets/plugins/select2/css/select2.min.css">
 		<link rel="stylesheet" href="{$TEMPLATE_PATH}/assets/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">

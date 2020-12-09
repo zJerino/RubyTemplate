@@ -13,8 +13,7 @@ class Ruby_Template extends TemplateBase {
 
 		$this->_settings = ROOT_PATH . '/custom/templates/Ruby/template_settings/settings.php';
 		
-
-
+		
 
 		$CONFIG_PATH 	= (defined('CONFIG_PATH') ? CONFIG_PATH : '/');
 		$TEMPLATE_PATH 	=  $CONFIG_PATH . 'custom/templates/Ruby';
@@ -49,6 +48,7 @@ class Ruby_Template extends TemplateBase {
 		));
 		$smarty->assign('ACTIONS_a', $language->get('general', 'actions'));
 		$smarty->assign('PAGE', PAGE);
+		$smarty->assign('MANIFEST', URL::Build('/Menifest.json'));
 		
 		$cache->setCache('RUBY_SETTINGS');
 		if (empty($cache->retrieve('GENERAL'))) {
@@ -61,6 +61,7 @@ class Ruby_Template extends TemplateBase {
 					'DESCRIPTION' => $FILE_DECODE->GENERAL->DESCRIPTION,
 					'FAVICON' => $FILE_DECODE->GENERAL->FAVICON,
 					'COLOR' => $FILE_DECODE->GENERAL->COLOR,
+					'DEFAULTMODE' => "light",
 				));
 				$cache->store('WIDGET_S', array(
 					'LAYOUT' 	=> $FILE_DECODE->WIDGETS->LAYOUT,
@@ -128,6 +129,10 @@ class Ruby_Template extends TemplateBase {
 					'CDALERT' 	=> $FILE_DECODE->COLORS->DARK->CDALERT,
 					'CINPUTS' 	=> $FILE_DECODE->COLORS->DARK->CINPUTS,
 				));
+				$queries = new Queries();
+				$active_templates = $queries->getWhere('templates', array('is_default', '=', 1));
+				
+				Redirect::to(URL::build('/panel/core/templates', 'action=settings&template='.$active_templates[0]->id));
 			}
 		}
 		

@@ -6,8 +6,8 @@
             } else if (localStorage.getItem('theme') === "light") {
                 document.querySelector('Html').setAttribute('mode', 'light');
             } else {
-                document.querySelector('Html').setAttribute('mode', 'light');
-                localStorage.setItem('theme', "light");
+                document.querySelector('Html').setAttribute('mode', '{$RUBY.GENERAL.DEFAULTMODE}');
+                localStorage.setItem('theme', "{$RUBY.GENERAL.DEFAULTMODE}");
             }
             function ChangeMode() {
                 if (document.querySelector('Html').getAttribute('mode') == "light") {
@@ -23,7 +23,8 @@
         <meta name="author" content="zJerino">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-          
+        <link rel="manifest" href="{$MANIFEST}">
+
         <title>{$TITLE} &bull; {$SITE_NAME}</title>
         <meta name="description" content="{$RUBY.GENERAL.DESCRIPTION}">
         <link rel="shortcut icon" href="{$RUBY.GENERAL.FAVICON}" type="image/x-icon">
@@ -31,6 +32,7 @@
         <meta rel="app-color" content="{$RUBY.GENERAL.COLOR}">
         <script src="{$TEMPLATE_PATH}/assets/js/turbolinks.js"></script>
         <script src="{$TEMPLATE_PATH}/assets/js/RubyTemplate.js"></script>
+
 
         {if ($PAGE == "members")}
             <meta name="turbolinks-visit-control" content="reload">
@@ -60,15 +62,21 @@
                     {if (count($WIDGETS_LEFT) && count($WIDGETS_RIGHT) || isset($RESOURCES_PANEL) || isset($RECURSOSCHIDOS))}
                         <div class="container-fluid">
                     {else}
-                        <div class="container">
+                        <div class="mw-100 px-md-5 px-xs-0 mx-lg-2">
                     {/if}
                     {if !empty($ANNOUNCEMENTS)}
                             {foreach from=$ANNOUNCEMENTS item=$ANNOUNCEMENT}
-                                <div class="callout callout-primary" id="announcement-{$ANNOUNCEMENT->id}" style="border-color:{$ANNOUNCEMENT->background_colour}; color:{$ANNOUNCEMENT->text_colour}">
-                                    <h5>{$ANNOUNCEMENT->header}</h5>
-                
-                                    <p>{$ANNOUNCEMENT->message}</p>
-                                </div>
+                                <div class="alert alert-light border-0 alert-dismissible fade show d-flex flex-row" style="background: var(--callout-bg);border-left:{$ANNOUNCEMENT->background_colour} 0.4rem solid !important;color: var(--callout-c)" role="alert" id="announcement-{$ANNOUNCEMENT->id}">
+                                    <div id="icon" style="margin-right: 1rem;font-size: 2rem;display: flex;align-items: center;">
+                                      {if isset($ANNOUNCEMENT->icon)}
+                                        <i class="{$ANNOUNCEMENT->icon} fa-1x"></i>
+                                      {/if}
+                                    </div>
+                                    <div id="content" class="w-100">
+                                        <strong>{$ANNOUNCEMENT->header}</strong> 
+                                        <p class="mb-0">{$ANNOUNCEMENT->message}</p>
+                                    </div>
+                                  </div>
                             {/foreach}
                         {/if}
                             <div class="row justify-content-center" id="container-content">

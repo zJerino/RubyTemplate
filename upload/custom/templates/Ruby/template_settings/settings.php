@@ -21,6 +21,7 @@ if (isset($_POST['UPLOADCONFIG']) && $_POST['UPLOADCONFIG'] == '1') {
 					'DESCRIPTION' => $FILE_DECODE->GENERAL->DESCRIPTION,
 					'FAVICON' => $FILE_DECODE->GENERAL->FAVICON,
 					'COLOR' => $FILE_DECODE->GENERAL->COLOR,
+					'DEFAULTMODE' => 'light',
 				));
 				$cache->store('WIDGET_S', array(
 					'LAYOUT' 	=> $FILE_DECODE->WIDGETS->LAYOUT,
@@ -150,6 +151,7 @@ if(Input::exists()){
 						'DESCRIPTION' => $_POST['SITE_DESCRIPTION'],
 						'FAVICON' => $_POST['SITE_FAVICON'],
 						'COLOR' => $_POST['SITE_COLOR'],
+						'DEFAULTMODE' => $_POST['DEFAULT_MODE'],
 					));
 					Session::flash('admin_templates', $language->get('admin', 'successfully_updated'));
 				} else {

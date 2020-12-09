@@ -21,7 +21,8 @@ class MoozEngine extends Module {
 		$pages->add($ModuleInfo['name'], '/MoozEngine.js', 'pages/EngineJS.php');
 		$pages->add($ModuleInfo['name'], '/sw.js', 'pages/sw.php');
 		$pages->add($ModuleInfo['name'], '/Conexion', 'pages/net.php');
-
+		$pages->add($ModuleInfo['name'], '/Menifest.json', 'pages/manifest.php');
+		
 		// Assign some variables
 		$this->language = $language;
 		$this->queries	= $queries;

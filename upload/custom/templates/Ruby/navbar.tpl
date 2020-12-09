@@ -106,7 +106,7 @@
       {if isset($CONFIG.SMARTY_DEBUG) && $CONFIG.SMARTY_DEBUG == "true"}
         
       {/if}
-      {DEBUG}
+       
       <!-- /.navbar -->
     
       <!-- Main Sidebar Container -->
