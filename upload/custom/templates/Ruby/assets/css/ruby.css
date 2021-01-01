@@ -430,7 +430,7 @@ img.emoji {
     width: 1.2rem;
 }
 
-aside .nav-pills .nav-link:not(.active):hover:before {content: ">";transform: translate(-15px, 3px);position: absolute;animation: constante 3s;}
+aside .nav-pills .nav-link:not(.active):hover:before {content: "\f105";font-family: 'Font Awesome 5 Free';transform: translate(-15px, 4px);position: absolute;font-weight: 900;animation: constante 3s;}
 
 .navbar {
     background-color: var(--navbar-bg);

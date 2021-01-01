@@ -100,48 +100,53 @@
         function Login() {
             document.querySelector('#clicklogin').classList.add('disabled');
             $.ajax({
-                url: FRONTEND_CON.SITE_HOME + "logout/"
+                url: "{$SITE_JOME}logout/"
             })
-
-            $.ajax({
-                url: FRONTEND_CON.SITE_HOME + "login/",
-                type: "POST",
-                dataType: "form",
-                data: {
-                    token: $('[name="token"]')[0].value,
-                    {if (isset($EMAIL))}
-                        email: $('[name="email"]')[0].value,
-                    {else}
-                        username: $('[name="username"]')[0].value,
-                    {/if}
-                    password: $('[name="password"]')[0].value,
-                    remember: $('[name="remember"]')[0].value,
-                    ajax: "true",
-                },
-                success: 'OK',
-            }).catch((req) => {
-                document.querySelector('#clicklogin').innerHTML = "{$LOADING}";
-                var res = JSON.parse(req.responseText);
-                if (res.approved == "true") {
-                    document.querySelector('#clicklogin').classList.replace('btn-primary', 'btn-success');
-                    document.querySelector('#clicklogin').innerHTML = "<i class='fa fa-check'></i>";
-                    toastr.success(res.message);
-                    setTimeout(() => {
-                        Turbolinks.visit(res.url, {})
-                    }, 2500)
-                } else {
-                    document.querySelector('#clicklogin').classList.replace('btn-primary', 'btn-danger');
-                    document.querySelector('#clicklogin').innerHTML = "<i class='fa fa-times'></i>";
-                    toastr.error(res.message);
-                    setTimeout(() => {
-                        document.querySelector('#clicklogin').classList.replace('btn-danger', 'btn-primary');
-                        document.querySelector('#clicklogin').innerHTML = "{$SIGN_IN}";
-                        setTimeout(() => {
-                            document.querySelector('#clicklogin').classList.remove('disabled');
-                        }, 2500)
-                    }, 2500)
-                }
-            })
+                $.ajax({
+                    url: "{$SITE_JOME}login/",
+                    type: "POST",
+                    dataType: "form",
+                    data: {
+                        token: $('[name="token"]')[0].value,
+                        {if (isset($EMAIL))}
+                            email: $('[name="email"]')[0].value,
+                        {else}
+                            username: $('[name="username"]')[0].value,
+                        {/if}
+                        password: $('[name="password"]')[0].value,
+                        remember: $('[name="remember"]')[0].value,
+                        ajax: "true",
+                    },
+                    success: 'OK',
+                }).catch((req) => {
+                        document.querySelector('#clicklogin').innerHTML = "{$LOADING}";
+                        try {
+                            var res = JSON.parse(req.responseText);
+                        } catch (error) {
+                            document.querySelector('#clicklogin').classList.replace('btn-primary', 'btn-warning');
+                            document.querySelector('#clicklogin').innerHTML = "<i class='far fa-clock'></i>";
+                            $('#form-login').submit();
+                        }
+                        if (res.approved == "true") {
+                            document.querySelector('#clicklogin').classList.replace('btn-primary', 'btn-success');
+                            document.querySelector('#clicklogin').innerHTML = "<i class='fa fa-check'></i>";
+                            toastr.success(res.message);
+                            setTimeout(() => {
+                                Turbolinks.visit(res.url, {})
+                            }, 2500)
+                        } else {
+                            document.querySelector('#clicklogin').classList.replace('btn-primary', 'btn-danger');
+                            document.querySelector('#clicklogin').innerHTML = "<i class='fa fa-times'></i>";
+                            toastr.error(res.message);
+                            setTimeout(() => {
+                                document.querySelector('#clicklogin').classList.replace('btn-danger', 'btn-primary');
+                                document.querySelector('#clicklogin').innerHTML = "{$SIGN_IN}";
+                                setTimeout(() => {
+                                    document.querySelector('#clicklogin').classList.remove('disabled');
+                                }, 2500)
+                            }, 2500)
+                    }
+                })
         }
     </script>
 	{foreach from=$TEMPLATE_JS item=script}
