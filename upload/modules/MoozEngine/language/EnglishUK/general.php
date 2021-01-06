@@ -1,11 +1,11 @@
 <?php 
  #=====================================#
- #	NamelessMC v2 pre8 || By Sametron  #
+ #	NamelessMC v2 pre9 || By Sametron  #
  #	MoozEngine By zJerino			   #
  #=====================================#
 
-$language_version = '2.0.0-pr8';
+$language_version = '2.0.0-pr9';
 $language = [
-	'OFFLINE' => 'Se ah caido la conexion',
-	'ONLINE' => 'Se ah restablecido la conexion',
+	'OFFLINE' => 'Connection was lost',
+	'ONLINE' => 'The connection was reestablished',
 ];
